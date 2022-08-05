@@ -25,6 +25,8 @@ export const AddCategory = ({ onNewCategory }) => {
         <form onSubmit={onSubmit}>
             <input type="text" placeholder='Buscar gif' value={inputValue}
                 onChange={onInputChange}
+
+            
             />
         </form>
     )
