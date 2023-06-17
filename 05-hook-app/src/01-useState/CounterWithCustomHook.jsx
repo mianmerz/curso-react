@@ -6,7 +6,7 @@ export const CounterWithCustomHook = () => {
 
     return (
         <section>
-            <h2>CounterWithCustomHook</h2>
+            <h2>Counter with custom Hook</h2>
 
             <div className="d-flex gap-5">
                 <h5>Counter with Hook: {counter}</h5>
