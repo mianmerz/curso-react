@@ -14,7 +14,7 @@ describe('Pruebas en el hook useFetchGifs', () => {
 
 
     test('debe de retornar un arreglo de imagenes y isLoading en false', async () => {
-        const { result } = renderHook(() => useFetchGifs('Goku'));
+        const { result } = renderHook(() => useFetchGifs('One Punch'));
 
         await waitFor(() => expect(result.current.images.length).toBeGreaterThan(0));
 
