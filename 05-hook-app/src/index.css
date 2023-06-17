@@ -5,3 +5,10 @@ body{
 button{
     margin-right: 10px;
 }
+
+section, .section{
+    margin-top: 40px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
