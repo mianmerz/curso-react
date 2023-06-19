@@ -9,7 +9,7 @@ export const Memorize = () => {
 
     return (
         <section>
-            <h2>Counter with custom Hook</h2>
+            <h2>Memorize</h2>
 
             <div className="d-flex gap-5">
                 <h5>Counter: <Small value={counter} /> </h5>
