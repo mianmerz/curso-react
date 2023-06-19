@@ -10,24 +10,25 @@ import { MemoHook } from "./06-memo/MemoHook";
 import { CallbackHook } from "./06-memo/CallbackHook";
 import { Padre } from "./07-tarea-memo/Padre";
 
+import './08-useReducer/intro-reducer';
+
 export const HooksApp = () => {
     return (
         <>
             <div>HooksApp</div>
 
-            {/* <CounterApp /> */}
-            {/* <CounterWithCustomHook /> */}
-            {/* <SimpleForm /> */}
-            {/* <FormWithCustomHook /> */}
-            {/* <MultipleCustomHooks /> */}
-            {/* <FocusScreen /> */}
-            {/* <Layout /> */}
-            {/* <Memorize /> */}
-            {/* <MemoHook /> */}
-            {/* <CallbackHook /> */}
+            {/* <CounterApp />
+            <CounterWithCustomHook />
+            <SimpleForm />
+            <FormWithCustomHook />
+            <MultipleCustomHooks />
+            <FocusScreen />
+            <Layout />
+            <Memorize />
+            <MemoHook />
+            <CallbackHook />
 
-            {/* Tarea */}
-            <Padre />
+            <Padre /> */}
         </>
     )
 }

@@ -11,9 +11,12 @@ export const Padre = () => {
     }, [])
 
     return (
-        <div>
-            <h1>Padre</h1>
-            <p> Total: {valor} </p>
+        <section>
+            <h2>Tarea reducer</h2>
+
+            <div className="d-flex gap-5">
+                <h5>Total: {valor} </h5>
+            </div>
 
             <hr />
 
@@ -26,7 +29,7 @@ export const Padre = () => {
                     />
                 ))
             }
-            {/* <Hijo /> */}
-        </div>
+
+        </section>
     )
 }
