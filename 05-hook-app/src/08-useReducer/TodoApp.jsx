@@ -3,23 +3,15 @@ import { todoReducer } from "./todoReducer";
 import { TodoList, TodoAdd } from "./components";
 import { useEffect } from "react";
 
+const init = () => {
+    return JSON.parse(localStorage.getItem('todos')) || [];
+}
+
 export const TodoApp = () => {
 
-    const initialState = [
-        // {
-        //     id: 8712391827491,
-        //     description: 'Recolectar la piedra del alma',
-        //     done: false
-        // },
-        // {
-        //     id: 18931948193,
-        //     description: 'Recolectar la piedra del poder',
-        //     done: false
-        // }
-    ]
+    const initialState = [];
 
-
-    const [todos, dispatch] = useReducer(todoReducer, initialState);
+    const [todos, dispatch] = useReducer(todoReducer, initialState, init);
 
 
     useEffect(() => {
