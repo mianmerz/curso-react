@@ -11,6 +11,7 @@ import { CallbackHook } from "./06-memo/CallbackHook";
 import { Padre } from "./07-tarea-memo/Padre";
 
 import './08-useReducer/intro-reducer';
+import { TodoApp } from "./08-useReducer/TodoApp";
 
 export const HooksApp = () => {
     return (
@@ -29,6 +30,8 @@ export const HooksApp = () => {
             <CallbackHook />
 
             <Padre /> */}
+
+            <TodoApp />
         </>
     )
 }
