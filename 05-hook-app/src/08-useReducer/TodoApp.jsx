@@ -1,26 +1,30 @@
 import { useReducer } from "react";
 import { todoReducer } from "./todoReducer";
 import { TodoList, TodoAdd } from "./components";
+import { useEffect } from "react";
 
 export const TodoApp = () => {
 
     const initialState = [
-        {
-            id: 8712391827491,
-            description: 'Recolectar la piedra del alma',
-            done: false
-        },
-        {
-            id: 18931948193,
-            description: 'Recolectar la piedra del poder',
-            done: false
-        }
+        // {
+        //     id: 8712391827491,
+        //     description: 'Recolectar la piedra del alma',
+        //     done: false
+        // },
+        // {
+        //     id: 18931948193,
+        //     description: 'Recolectar la piedra del poder',
+        //     done: false
+        // }
     ]
 
 
     const [todos, dispatch] = useReducer(todoReducer, initialState);
 
-    console.log("Todos", todos)
+
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(todos));
+    }, [todos]);
 
 
     const handleNewTodo = (newTodo) => {
@@ -28,7 +32,7 @@ export const TodoApp = () => {
             type: 'ADD_TODO',
             payload: newTodo
         };
-        
+
         dispatch(action);
 
         console.log("Agregando nueva tarea", newTodo)
