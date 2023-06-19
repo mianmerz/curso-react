@@ -4,14 +4,14 @@ import { useTodo } from "./hooks/useTodo";
 
 export const TodoApp = () => {
 
-    const { todos, handleNewTodo, handleDeleteTodo, handleToggleTodo } = useTodo();
+    const { todos, todosCount, pendingTodosCount, handleNewTodo, handleDeleteTodo, handleToggleTodo } = useTodo();
 
     return (
         <section>
             <h2>Todo App</h2>
 
             <div className="d-flex gap-5">
-                <h5>Todos: 10</h5> <h5>Pendientes: 2</h5>
+                <h5>Todos: {todosCount}</h5> <h5>Pendientes: {pendingTodosCount}</h5>
             </div>
             <hr />
 
