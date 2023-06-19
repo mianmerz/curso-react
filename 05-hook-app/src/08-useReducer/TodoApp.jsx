@@ -26,8 +26,15 @@ export const TodoApp = () => {
         };
 
         dispatch(action);
+    }
 
-        console.log("Agregando nueva tarea", newTodo)
+    const handleDeleteTodo = (todoId) => {
+        const action = {
+            type: 'DELETE_TODO',
+            payload: todoId
+        };
+
+        dispatch(action);
     }
 
 
@@ -43,7 +50,7 @@ export const TodoApp = () => {
 
             <div className="row">
                 <div className="col-7">
-                    <TodoList todos={todos} />
+                    <TodoList todos={todos} handleDeleteTodo={handleDeleteTodo} />
                 </div>
 
                 <div className="col-5">
