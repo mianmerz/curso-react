@@ -5,8 +5,8 @@ import { ShowIncrement } from './components/ShowIncrement';
 export const CallbackHook = () => {
     const [counter, setCounter] = useState(10);
 
-    const incrementCallback = useCallback(() => {
-        setCounter((counter) => counter + 1);
+    const incrementCallback = useCallback((value) => {
+        setCounter((counter) => counter + value);
     }, [])
 
     // const increment = () => {
