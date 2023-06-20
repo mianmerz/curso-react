@@ -1,3 +1,8 @@
+import { Routes, Route, Navigate } from 'react-router-dom';
+
+import { HomePage } from './pages/HomePage';
+import { AboutPage } from './pages/AbaoutPage';
+import { LoginPage } from './pages/LoginPage';
 
 export const MainApp = () => {
 
@@ -11,7 +16,13 @@ export const MainApp = () => {
             </div>
 
             <hr />
-            asd
+
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="login" element={<LoginPage />} />
+                <Route path="about" element={<AboutPage />} />
+                <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
         </section>
     )
 }
