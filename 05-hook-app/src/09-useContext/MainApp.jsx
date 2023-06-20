@@ -1,18 +1,18 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, Link } from 'react-router-dom';
 
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AbaoutPage';
 import { LoginPage } from './pages/LoginPage';
 
 export const MainApp = () => {
-
-
     return (
         <section>
-            <h2>useContext</h2>
+            <h2>Main app</h2>
 
-            <div className="d-flex gap-5">
-                <h5>Main app</h5>
+            <div className="d-flex gap-3">
+                <Link to='/' className='text-decoration-none'><h5>Home</h5></Link>
+                <Link to='/about' className='text-decoration-none'><h5>About</h5></Link>
+                <Link to='/login' className='text-decoration-none'><h5>Login</h5></Link>
             </div>
 
             <hr />
