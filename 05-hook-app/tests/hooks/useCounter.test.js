@@ -1,4 +1,4 @@
-const { renderHook } = require("@testing-library/react");
+const { renderHook, act } = require("@testing-library/react");
 const { useCounter } = require("../../src/hooks/useCounter");
 
 describe('Pruebas en el useCounter', () => {
@@ -18,4 +18,19 @@ describe('Pruebas en el useCounter', () => {
 
         expect(counter).toBe(100);
     });
+
+    test("Debe de incrementar el counter en 1", () => {
+        const { result } = renderHook(() => useCounter(100));
+        const { increment } = result.current;
+
+        act(() => {
+            increment();
+        })
+
+        const { counter } = result.current;
+
+        expect(counter).toBe(101);
+    }
+    );
+
 });
