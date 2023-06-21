@@ -10,6 +10,12 @@ describe('Pruebas en el useCounter', () => {
         expect(decrement).toEqual(expect.any(Function));
         expect(increment).toEqual(expect.any(Function));
         expect(reset).toEqual(expect.any(Function));
-        
+    });
+
+    test("Debe de generar el counter con el valor de 100", () => {
+        const { result } = renderHook(() => useCounter(100));
+        const { counter } = result.current;
+
+        expect(counter).toBe(100);
     });
 });
