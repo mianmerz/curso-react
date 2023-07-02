@@ -25,12 +25,26 @@ describe('Pruebas en el useCounter', () => {
 
         act(() => {
             increment();
+            increment(2);
         })
 
         const { counter } = result.current;
 
-        expect(counter).toBe(101);
-    }
-    );
+        expect(counter).toBe(103);
+    });
+
+    test("Debe de decrementar el counter en 1", () => {
+        const { result } = renderHook(() => useCounter(100));
+        const { decrement } = result.current;
+
+        act(() => {
+            decrement();
+            decrement(2);
+        })
+
+        const { counter } = result.current;
+
+        expect(counter).toBe(97);
+    });
 
 });
