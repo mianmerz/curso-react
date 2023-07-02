@@ -8,8 +8,6 @@ export const MultipleCustomHooks = () => {
     const { counter, increment } = useCounter(1);
     const { data, isLoading } = useFetch('https://api.breakingbadquotes.xyz/v1/quotes/' + counter);
 
-    // console.log({ data, isLoading, hasError });
-
     const { author, quote } = !!data && data[0];
 
     return (

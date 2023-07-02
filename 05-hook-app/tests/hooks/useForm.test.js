@@ -37,4 +37,22 @@ describe('Pruebas en useForm', () => {
         expect(formState).toEqual({ ...initialForm, name: newValue });
         expect(result.current.name).toBe(newValue);
     });
+
+    test('debe de re-establecer el formulario con RESET', () => {
+        const newValue = "Juan";
+
+        const { result } = renderHook(() => useForm(initialForm));
+        const { onInputChange, onReset } = result.current;
+        
+        act(() => {
+            onInputChange({
+                target: { name: 'name', value: newValue }
+            });
+            onReset();
+        });
+        
+        const { formState } = result.current;
+
+        expect(formState).toEqual(initialForm);
+    });
 });
