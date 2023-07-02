@@ -1,15 +1,15 @@
 import { Navigate, useNavigate, useParams } from "react-router-dom"
 import { getHeroById } from "../helpers";
+import { useMemo } from "react";
 
 export const HeroPage = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    const onNavigateBack = () => {
-        navigate(-1);
-    }
+    const hero = useMemo(() => getHeroById(id), [id]);
 
-    const hero = getHeroById(id);
+    const onNavigateBack = () => navigate(-1);
+
     if (!hero) return <Navigate to="/" />
 
     return (
@@ -18,7 +18,7 @@ export const HeroPage = () => {
                 <div className="col-4">
                     <img className="img-thumbnail" src={`/assets/heroes/${id}.jpg`} alt={hero.superhero} />
                 </div>
-                
+
                 <div className="col">
                     <h3>{hero.superhero}</h3>
                     <ul className="list-group list-group-flush">
