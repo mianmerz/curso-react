@@ -11,4 +11,21 @@ describe('Pruebas en todoReducer', () => {
         const newState = todoReducer(initialState, {});
         expect(newState).toBe(initialState);
     });
+
+    test('debe de agregar un TODO', () => {
+        const action = {
+            type: 'ADD_TODO',
+            payload: {
+                id: 2,
+                descripcion: 'Aprender Node',
+                done: false
+            }
+        }
+
+        const newState = todoReducer(initialState, action);
+        
+        expect(newState.length).toBe(2);
+        expect(newState).toContainer(action.payload);
+
+    });
 })
