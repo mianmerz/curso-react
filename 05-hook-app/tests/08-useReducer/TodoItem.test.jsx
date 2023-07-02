@@ -19,8 +19,19 @@ describe('Pruebas en <TodoItem />', () => {
         expect(liElement.className).toBe('list-group-item d-flex justify-content-between align-items-center')
 
         const spanElement = screen.getByLabelText('Cambiar estado de la tarea');
-        expect(spanElement.className).toContain('user-select-none')
-        expect(spanElement.className).not.toContain('text-decoration-line-through')
+        expect(spanElement.className).toContain('user-select-none');
+        expect(spanElement.className).not.toContain('text-decoration-line-through');
     });
 
+    test('debe de mostrar el Todo Completado', () => {
+        todo.done = true;
+
+        render(<TodoItem todo={todo} onToggleTodo={onDeleteTodoMock} onDeleteTodo={onDeleteTodoMock} />);
+
+        const liElement = screen.getByRole('listitem');
+        expect(liElement.className).toBe('list-group-item d-flex justify-content-between align-items-center')
+
+        const spanElement = screen.getByLabelText('Cambiar estado de la tarea');
+        expect(spanElement.className).toContain('text-decoration-line-through');
+    });
 })
