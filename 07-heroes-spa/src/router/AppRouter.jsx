@@ -4,9 +4,12 @@ import { LoginPage } from "../auth/pages/LoginPage"
 import { MarvelPage } from "../heroes/pages/MarvelPage"
 import { DcPage } from "../heroes/pages/DCPage"
 
+import { Navbar } from "../ui"
+
 export const AppRouter = () => {
     return (
         <>
+        <Navbar />
             <Routes>
                 <Route path="login" element={<LoginPage />} />
 
