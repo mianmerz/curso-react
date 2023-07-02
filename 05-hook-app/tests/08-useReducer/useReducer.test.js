@@ -38,4 +38,17 @@ describe('Pruebas en todoReducer', () => {
 
         expect(newState.length).toBe(0);
     });
+
+    test('debe de hacer el TOGGLE del TODO', () => {
+        const action = {
+            type: 'TOGGLE_TODO',
+            payload: 1
+        }
+
+        const newState = todoReducer(initialState, action);
+        expect(newState[0].done).toBeTruthy();
+
+        const newState2 = todoReducer(newState, action);
+        expect(newState2[0].done).toBeFalsy();
+    });
 })
