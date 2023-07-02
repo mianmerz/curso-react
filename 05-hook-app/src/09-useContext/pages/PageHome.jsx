@@ -3,8 +3,8 @@ import { UserContext } from "../context/UserContext";
 
 
 export const HomePage = () => {
+    console.log("oaisdjoiajsd")
     const { user } = useContext(UserContext);
-
     return (
         <main>
             <h4>Home page</h4>
@@ -13,7 +13,7 @@ export const HomePage = () => {
                 {user?.name}
             </span>
 
-            <pre>{JSON.stringify(user, null, 3)}</pre>
+            <pre aria-label="pre">{JSON.stringify(user, null, 3)}</pre>
 
 
         </main>
