@@ -43,4 +43,13 @@ describe('Pruebas en <TodoItem />', () => {
 
         expect(onToggleTodoMock).lastCalledWith(todo.id);
     });
+
+    test('debe de llamar la función onDeleteTodo', () => {
+        render(<TodoItem todo={todo} onToggleTodo={onToggleTodoMock} onDeleteTodo={onDeleteTodoMock} />);
+
+        const buttonElement = screen.getByRole('button');
+        fireEvent.click(buttonElement);
+
+        expect(onDeleteTodoMock).lastCalledWith(todo.id);
+    });
 })
