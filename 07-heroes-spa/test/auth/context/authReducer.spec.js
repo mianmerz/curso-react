@@ -16,10 +16,23 @@ describe('Pruebas en authReducer', () => {
         }
 
         const state = authReducer({ logged: false }, action);
-        expect(state).toEqual({ logged: true, user: action.payload})
+        expect(state).toEqual({ logged: true, user: action.payload })
     })
 
     test('debe de borrar el name del usuario y logged en false', () => {
+        const state = {
+            logged: true,
+            user: {
+                name: "Juan",
+                id: "123"
+            }
+        }
 
+        const action = {
+            type: types.logout
+        }
+        const newState = authReducer(state, action);
+
+        expect(newState).toEqual({ logged: false })
     })
 })
