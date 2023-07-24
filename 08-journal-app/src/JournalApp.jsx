@@ -1,6 +1,9 @@
+import { AppRouter } from "./router/AppRouter"
 
 export const JournalApp = () => {
-  return (
-    <div>Hola mundito</div>
-  )
+    return (
+        <>
+            <AppRouter />
+        </>
+    )
 }
