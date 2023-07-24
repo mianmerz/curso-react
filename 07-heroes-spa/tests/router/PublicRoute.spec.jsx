@@ -3,6 +3,7 @@ import { PublicRoute } from "../../src/router/PublicRoute"
     ;
 import { AuthContext } from "../../src/auth";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
+
 describe('PublicRoute', () => {
 
     test("debe de mostrar el children si no está autenticado", () => {
